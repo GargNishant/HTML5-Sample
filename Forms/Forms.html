@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Forms Sample</title>
+
+	<!--display: inline-block actually makes them look in equa distance to each other. For better understanding.
+	just delete it and see. The width in label defines the total width of that label block  -->
+	<style>
+		td{
+			padding: 5px;
+		}
+		label{
+			display: inline-block;
+			width: 150px;
+		}
+
+	</style>
+
+</head>
+<body style="margin: 0; background-color: #1c478e; color: #fff;">
+	<h1 style="margin: 0;padding: 5px; background-color: #333; color: #fff">
+		Blue Developer Directory		
+	</h1>
+	<!-- Main Div-->
+	<div style="padding-left: 10px">
+		<h3>Contact Us</h3>
+		<p>Please use this form to Contact our Team</p>
+		<!-- action is for lang and file which process this form. In this we choose process.php Same for post. Used for processing the form-->
+		<form action="process.php" method="post">
+
+			<p>
+				<!--Label groups the text firld and the text. The for att should be same as name-->
+				<label for="Name">Full Name: </label>
+				<input type="text" name="Name">
+			</p>
+			<p>
+				<label for="Email">Email Address: </label>
+				<input type="text" name="Email">
+			</p>
+			<p>
+				<!--nput type text gives us a text field to write into it -->
+				<label for="Phone">Phone Number: </label>
+				<input type="text" name="Phone">
+			</p>
+			<p>
+				<!-- checked gives the default selected option.-->
+				<!-- Input type radio gives us radio button-->
+				<label for="call">Best Time To Call</label>
+				<input type="radio" name="call" value="Morning" checked>Morning
+				<input type="radio" name="call" value="Afternoon">Afternoon
+				<input type="radio" name="call" value="Evening">Evening
+			</p>
+
+			<p>
+				<label for="budget">Budget: </label>
+				<select type="list" name="budget">
+					<option>--Select One--</option>
+					<option value="100-499">$100 - $499</option>
+					<option value="500-999">$500 - $999</option>
+					<option value="1000-1499">$1000 - $1499</option>
+					<option value="1500-1999">$1500 - $1999</option>
+				</select>
+			</p>
+
+			<p>
+				<label for="services">Services Needed: <br>(Check all that apply)</label>
+				<table>
+					<tr>
+						<td><input type="checkbox" name="services" value="html">Html5</td>
+						<td><input type="checkbox" name="services" value="php">Php</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="services" value="asp">ASP</td>
+						<td><input type="checkbox" name="services" value="java">Java</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" name="services" value="c++">C++</td>
+						<td><input type="checkbox" name="services" value="design">Design</td>
+					</tr>
+				</table>
+			</p>
+			<p>
+				<input type="submit" name="submit" value="Submit Form">
+			</p>
+		</form>
+	</div>
+
+</body>
+</html>

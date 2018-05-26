@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Geo Location Sample</title>
+</head>
+<body>
+
+	<button onclick="showLocation()">Click Me!</button>
+	
+	<script type="text/javascript">
+		
+		function showLocation(){
+			if(navigator.geolocation){
+
+				//The get Current Position returns an object which holds the value to another function which is passed as
+				//parameter. In this case showPosition is the function which gets the object by getCurrentPosition and we 
+				//use showPosition method to extract the data from position object 
+				navigator.geolocation.getCurrentPosition(showPosition);
+			}
+			else
+			{document.write("Upgrade Browser");}	
+		}
+
+		function showPosition(position){
+			document.write("Latitude: " + position.coords.latitude + " Longitude:" + position.coords.longitude);
+		}
+		
+	</script>
+
+</body>
+</html>
